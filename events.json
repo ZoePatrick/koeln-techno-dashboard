@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-04-05",
+  "events": [
+    {"name":"Bootshaus Weekend Techno","venue":"Bootshaus","date":"Kommendes Wochenende","link":"https://rausgegangen.de","source":"Seed"},
+    {"name":"Gewölbe Clubnacht","venue":"Gewölbe","date":"Kommendes Wochenende","link":"https://rausgegangen.de","source":"Seed"},
+    {"name":"Odonien Rave","venue":"Odonien","date":"Kommendes Wochenende","link":"https://rausgegangen.de","source":"Seed"},
+    {"name":"Artheater Techno","venue":"Artheater","date":"Kommendes Wochenende","link":"https://rausgegangen.de","source":"Seed"},
+    {"name":"Helios37 Night","venue":"Helios37","date":"Kommendes Wochenende","link":"https://rausgegangen.de","source":"Seed"},
+    {"name":"Schrotty Session","venue":"Schrotty","date":"Kommendes Wochenende","link":"https://rausgegangen.de","source":"Seed"},
+    {"name":"Reineke Fuchs Clubnacht","venue":"Reineke Fuchs","date":"Kommendes Wochenende","link":"https://rausgegangen.de","source":"Seed"},
+    {"name":"FI Event","venue":"FI","date":"Kommendes Wochenende","link":"https://rausgegangen.de","source":"Seed"}
+  ]
+}

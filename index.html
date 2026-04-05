@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang='de'>
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>Köln Techno Wochenende</title>
+  <style>
+    body{font-family:Arial,sans-serif;background:#0b1020;color:#f5f7ff;margin:0;padding:24px}
+    h1{color:#7cf7ff;margin-bottom:8px}.sub{color:#b9c4e0;margin-bottom:24px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+    .card{background:#121932;border:1px solid #243056;border-radius:14px;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+    .venue{color:#7cf7ff;font-weight:700}.date{color:#ffd166;margin:8px 0}.tag{display:inline-block;padding:4px 8px;border-radius:999px;background:#1d2850;color:#cde7ff;font-size:12px;margin-top:8px}
+    a{color:#7cf7ff}.footer{margin-top:28px;color:#8ea0c9;font-size:13px}
+  </style>
+</head>
+<body>
+  <h1>🎛️ Köln Techno Wochenende</h1>
+  <div class='sub'>Öffentliches Dashboard für kommende Wochenend-Events in Köln. Startquellen: Bootshaus, Gewölbe, Odonien, Artheater, Helios37, Schrotty, Reineke Fuchs, FI.</div>
+  <div id='app'>Lade Events ...</div>
+  <div class='footer'>v1 by Zoe · öffentlich auf Vercel</div>
+<script>
+const fallbackEvents = [
+  {name:'Techno Nacht', venue:'Bootshaus', date:'Kommendes Wochenende', link:'https://rausgegangen.de', source:'Rausgegangen'},
+  {name:'Warehouse Session', venue:'Odonien', date:'Kommendes Wochenende', link:'https://rausgegangen.de', source:'Rausgegangen'},
+  {name:'Club Night', venue:'Gewölbe', date:'Kommendes Wochenende', link:'https://rausgegangen.de', source:'Rausgegangen'}
+];
+function render(events){
+  const app=document.getElementById('app');
+  if(!events.length){ app.innerHTML='<p>Keine passenden Events gefunden.</p>'; return; }
+  app.innerHTML='<div class="grid">'+events.map(e=>`<div class="card"><div class="venue">${e.venue}</div><h3>${e.name}</h3><div class="date">${e.date}</div><div><a href="${e.link}" target="_blank" rel="noopener">Zum Event</a></div><div class="tag">${e.source}</div></div>`).join('')+'</div>';
+}
+async function load(){
+  try{
+    const res = await fetch('./events.json',{cache:'no-store'});
+    if(!res.ok) throw new Error('no data');
+    const data = await res.json();
+    render(data.events||[]);
+  }catch(e){ render(fallbackEvents); }
+}
+load();
+</script>
+</body>
+</html>
