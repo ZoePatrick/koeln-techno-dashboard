@@ -1,13 +1,10 @@
 {
   "generatedAt": "2026-04-05",
   "events": [
-    {"name":"Bootshaus Weekend Techno","venue":"Bootshaus","date":"Kommendes Wochenende","link":"https://rausgegangen.de","source":"Seed"},
-    {"name":"Gewölbe Clubnacht","venue":"Gewölbe","date":"Kommendes Wochenende","link":"https://rausgegangen.de","source":"Seed"},
-    {"name":"Odonien Rave","venue":"Odonien","date":"Kommendes Wochenende","link":"https://rausgegangen.de","source":"Seed"},
-    {"name":"Artheater Techno","venue":"Artheater","date":"Kommendes Wochenende","link":"https://rausgegangen.de","source":"Seed"},
-    {"name":"Helios37 Night","venue":"Helios37","date":"Kommendes Wochenende","link":"https://rausgegangen.de","source":"Seed"},
-    {"name":"Schrotty Session","venue":"Schrotty","date":"Kommendes Wochenende","link":"https://rausgegangen.de","source":"Seed"},
-    {"name":"Reineke Fuchs Clubnacht","venue":"Reineke Fuchs","date":"Kommendes Wochenende","link":"https://rausgegangen.de","source":"Seed"},
-    {"name":"FI Event","venue":"FI","date":"Kommendes Wochenende","link":"https://rausgegangen.de","source":"Seed"}
+    {"name": "Simple Present - Call Super, DCHM, Lingy", "venue": "Gewölbe", "date": "Fr 10.04. 23:00", "link": "https://gewoelbe.club", "source": "Gewölbe"},
+    {"name": "Hoove - Alex Neri, Julian Feierabend, sakali", "venue": "Gewölbe", "date": "Sa 11.04. 23:00", "link": "https://gewoelbe.club", "source": "Gewölbe"},
+    {"name": "DR. MOTTE x art of urban life x Lichtblick", "venue": "Artheater", "date": "Fr 10.04.", "link": "https://artheater.de/", "source": "Artheater"},
+    {"name": "KOMM RAVEN X CSM", "venue": "Artheater", "date": "Sa 11.04.", "link": "https://artheater.de/", "source": "Artheater"},
+    {"name": "Treibstoff Klub - Leolo Lozone, Marcel Janovsky, Steve Bug", "venue": "Gewölbe", "date": "Sa 04.04. 23:00", "link": "https://gewoelbe.club", "source": "Gewölbe"}
   ]
 }
