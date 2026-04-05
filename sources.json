@@ -1,0 +1,83 @@
+{
+  "generatedAt": "2026-04-05 01:27",
+  "city": "Köln",
+  "primary": [
+    {
+      "name": "Schrotty",
+      "url": "https://rausgegangen.de/locations/schrotty/",
+      "type": "rausgegangen"
+    },
+    {
+      "name": "Gewölbe",
+      "url": "https://rausgegangen.de/locations/gewoelbe/",
+      "type": "rausgegangen"
+    },
+    {
+      "name": "Artheater",
+      "url": "https://rausgegangen.de/locations/artheater/",
+      "type": "rausgegangen"
+    },
+    {
+      "name": "Helios 37",
+      "url": "https://rausgegangen.de/locations/helios-37/",
+      "type": "rausgegangen"
+    },
+    {
+      "name": "Bootshaus",
+      "url": "https://rausgegangen.de/locations/bootshaus/",
+      "type": "rausgegangen"
+    },
+    {
+      "name": "Odonien",
+      "url": "https://rausgegangen.de/locations/odonien/",
+      "type": "rausgegangen"
+    },
+    {
+      "name": "FI",
+      "url": "https://rausgegangen.de/locations/fi/",
+      "type": "rausgegangen"
+    },
+    {
+      "name": "Reineke Fuchs",
+      "url": "https://rausgegangen.de/locations/reineke-fuchs/",
+      "type": "rausgegangen"
+    }
+  ],
+  "secondary": [
+    {
+      "name": "Technodampfer",
+      "url": "https://www.technodampfer.com/koeln",
+      "type": "aggregator"
+    },
+    {
+      "name": "Morgengrau",
+      "url": "https://www.morgengrau.net/",
+      "type": "club"
+    },
+    {
+      "name": "Odonien Club",
+      "url": "https://odonien.de/club",
+      "type": "club"
+    },
+    {
+      "name": "Resident Advisor Odonien",
+      "url": "https://de.ra.co/clubs/10929",
+      "type": "ra"
+    },
+    {
+      "name": "Affenkäfig",
+      "url": "https://affenkaefig.info/tickets-2/",
+      "type": "tickets"
+    },
+    {
+      "name": "Tagesraver",
+      "url": "https://tagesraver.ticket.io/?lang=de",
+      "type": "tickets"
+    },
+    {
+      "name": "Pollerwiesen",
+      "url": "https://rausgegangen.de/organizations/pollerwiesen-1/",
+      "type": "rausgegangen"
+    }
+  ]
+}
