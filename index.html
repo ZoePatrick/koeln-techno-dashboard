@@ -6,39 +6,34 @@
   <title>Köln Techno Wochenende</title>
   <style>
     body{font-family:Arial,sans-serif;background:#0b1020;color:#f5f7ff;margin:0;padding:24px}
-    h1{color:#7cf7ff;margin-bottom:8px}.sub{color:#b9c4e0;margin-bottom:24px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
-    .card{background:#121932;border:1px solid #243056;border-radius:14px;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
-    .venue{color:#7cf7ff;font-weight:700}.date{color:#ffd166;margin:8px 0}.tag{display:inline-block;padding:4px 8px;border-radius:999px;background:#1d2850;color:#cde7ff;font-size:12px;margin-top:8px}
-    a{color:#7cf7ff}.footer{margin-top:28px;color:#8ea0c9;font-size:13px}
+    h1{color:#7cf7ff;margin-bottom:8px}.sub{color:#b9c4e0;margin-bottom:20px}.meta{color:#8ea0c9;font-size:13px;margin-bottom:20px}
+    table{width:100%;border-collapse:collapse;background:#121932;border:1px solid #243056;border-radius:12px;overflow:hidden}
+    th,td{padding:14px 12px;border-bottom:1px solid #243056;text-align:left;vertical-align:top}
+    th{background:#182246;color:#cfe9ff} tr:hover td{background:#141f3d}
+    a{color:#7cf7ff}.venue{font-weight:700}.src{font-size:12px;color:#9fb0d8}.footer{margin-top:24px;color:#8ea0c9;font-size:13px}
+    .empty{padding:16px;background:#121932;border:1px solid #243056;border-radius:12px}
   </style>
 </head>
 <body>
   <h1>🎛️ Köln Techno Wochenende</h1>
-  <div class='sub'>Öffentliches Dashboard für kommende Wochenend-Events in Köln. Startquellen: Bootshaus, Gewölbe, Odonien, Artheater, Helios37, Schrotty, Reineke Fuchs, FI.</div>
-  <div id='app'>Lade Events ...</div>
-  <div class='footer'>v1 by Zoe · öffentlich auf Vercel</div>
+  <div class='sub'>Liste kommender Wochenend-Events in Köln. Fokus: Techno / Clubnächte.</div>
+  <div id='meta' class='meta'>Lade Daten ...</div>
+  <div id='app'></div>
+  <div class='footer'>v3 by Zoe · öffentlich auf Vercel</div>
 <script>
-const fallbackEvents = [
-  {name:'Techno Nacht', venue:'Bootshaus', date:'Kommendes Wochenende', link:'https://rausgegangen.de', source:'Rausgegangen'},
-  {name:'Warehouse Session', venue:'Odonien', date:'Kommendes Wochenende', link:'https://rausgegangen.de', source:'Rausgegangen'},
-  {name:'Club Night', venue:'Gewölbe', date:'Kommendes Wochenende', link:'https://rausgegangen.de', source:'Rausgegangen'}
-];
-function render(events){
+function render(data){
   const app=document.getElementById('app');
-  if(!events.length){ app.innerHTML='<p>Keine passenden Events gefunden.</p>'; return; }
-  app.innerHTML='<div class="grid">'+events.map(e=>`<div class="card"><div class="venue">${e.venue}</div><h3>${e.name}</h3><div class="date">${e.date}</div><div><a href="${e.link}" target="_blank" rel="noopener">Zum Event</a></div><div class="tag">${e.source}</div></div>`).join('')+'</div>';
+  document.getElementById('meta').textContent = 'Aktualisiert: '+(data.generatedAt||'unbekannt')+' · Quellen: '+(data.sources||[]).join(', ');
+  const events=data.events||[];
+  if(!events.length){ app.innerHTML='<div class="empty">Keine passenden Events gefunden.</div>'; return; }
+  app.innerHTML = `<table><thead><tr><th>Datum</th><th>Event</th><th>Club</th><th>Link</th></tr></thead><tbody>${events.map(e=>`<tr><td>${e.date}</td><td><div>${e.name}</div><div class="src">${e.source}</div></td><td class="venue">${e.venue}</td><td><a href="${e.link}" target="_blank" rel="noopener">Event öffnen</a></td></tr>`).join('')}</tbody></table>`;
 }
 async function load(){
-  try{
-    const res = await fetch('./events.json',{cache:'no-store'});
-    if(!res.ok) throw new Error('no data');
-    const data = await res.json();
-    render(data.events||[]);
-  }catch(e){ render(fallbackEvents); }
+  const res=await fetch('./events.json',{cache:'no-store'});
+  const data=await res.json();
+  render(data);
 }
 load();
 </script>
 </body>
 </html>
-<!-- deploy trigger -->
